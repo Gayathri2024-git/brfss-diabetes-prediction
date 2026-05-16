@@ -1,0 +1,815 @@
+{
+    "py/object": "df_analyze.cli.cli.ProgramOptions",
+    "version": "3.5.0",
+    "seed": 69,
+    "cli_args": "df-analyze.py --df /home/prade/data/LLCP2020_DIABETE4_80k_DEMOGRAPHIC.parquet --mode classify --target DIABETE4 --classifiers catboost lgbm rf gandalf dummy --feat-select filter embed wrap --htune-trials 50 --outdir /home/prade/df_phase4_results/secondary2020/RUN2_DEMOGRAPHIC",
+    "datapath": {
+        "py/reduce": [
+            {
+                "py/type": "pathlib.PosixPath"
+            },
+            {
+                "py/tuple": [
+                    "/",
+                    "home",
+                    "prade",
+                    "data",
+                    "LLCP2020_DIABETE4_80k_DEMOGRAPHIC.parquet"
+                ]
+            }
+        ]
+    },
+    "test_paths": [],
+    "tests_method": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.ValidationMethod"
+            },
+            {
+                "py/tuple": [
+                    "list"
+                ]
+            }
+        ]
+    },
+    "targets": [
+        "DIABETE4"
+    ],
+    "target": "DIABETE4",
+    "grouper": null,
+    "categoricals": [],
+    "ordinals": [],
+    "drops": [],
+    "nan_handling": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.NanHandling"
+            },
+            {
+                "py/tuple": [
+                    "mean"
+                ]
+            }
+        ]
+    },
+    "norm": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.Normalization"
+            },
+            {
+                "py/tuple": [
+                    "robust"
+                ]
+            }
+        ]
+    },
+    "feat_select": {
+        "py/tuple": [
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.FeatureSelection"
+                    },
+                    {
+                        "py/tuple": [
+                            "embed"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.FeatureSelection"
+                    },
+                    {
+                        "py/tuple": [
+                            "filter"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.FeatureSelection"
+                    },
+                    {
+                        "py/tuple": [
+                            "wrap"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "embed_select": {
+        "py/tuple": [
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.EmbedSelectionModel"
+                    },
+                    {
+                        "py/tuple": [
+                            "linear"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "wrapper_select": null,
+    "wrapper_model": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.WrapperSelectionModel"
+            },
+            {
+                "py/tuple": [
+                    "linear"
+                ]
+            }
+        ]
+    },
+    "n_filter_cont": 0.5,
+    "n_filter_cat": 0.5,
+    "n_feat_filter": 0.5,
+    "n_feat_wrapper": 20,
+    "filter_assoc_cont_cls": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.analysis.univariate.associate.ContClsStats"
+            },
+            {
+                "py/tuple": [
+                    "mut_info"
+                ]
+            }
+        ]
+    },
+    "filter_assoc_cat_cls": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.analysis.univariate.associate.CatClsStats"
+            },
+            {
+                "py/tuple": [
+                    "mut_info"
+                ]
+            }
+        ]
+    },
+    "filter_assoc_cont_reg": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.analysis.univariate.associate.ContRegStats"
+            },
+            {
+                "py/tuple": [
+                    "F"
+                ]
+            }
+        ]
+    },
+    "filter_assoc_cat_reg": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.analysis.univariate.associate.CatRegStats"
+            },
+            {
+                "py/tuple": [
+                    "H"
+                ]
+            }
+        ]
+    },
+    "filter_pred_cls_score": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.ClsScore"
+            },
+            {
+                "py/tuple": [
+                    "acc"
+                ]
+            }
+        ]
+    },
+    "filter_pred_reg_score": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.RegScore"
+            },
+            {
+                "py/tuple": [
+                    "mae"
+                ]
+            }
+        ]
+    },
+    "redundant_selection": false,
+    "redundant_threshold": 0.005,
+    "redundant_corr_threshold": 0.8,
+    "mt_agg_strategy": "borda",
+    "mt_top_k": null,
+    "is_classification": true,
+    "classifiers": {
+        "py/tuple": [
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeClassifier"
+                    },
+                    {
+                        "py/tuple": [
+                            "catboost"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeClassifier"
+                    },
+                    {
+                        "py/tuple": [
+                            "dummy"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeClassifier"
+                    },
+                    {
+                        "py/tuple": [
+                            "gandalf"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeClassifier"
+                    },
+                    {
+                        "py/tuple": [
+                            "lgbm"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeClassifier"
+                    },
+                    {
+                        "py/tuple": [
+                            "rf"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "regressors": {
+        "py/tuple": [
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeRegressor"
+                    },
+                    {
+                        "py/tuple": [
+                            "dummy"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeRegressor"
+                    },
+                    {
+                        "py/tuple": [
+                            "elastic"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeRegressor"
+                    },
+                    {
+                        "py/tuple": [
+                            "knn"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeRegressor"
+                    },
+                    {
+                        "py/tuple": [
+                            "lgbm"
+                        ]
+                    }
+                ]
+            },
+            {
+                "py/reduce": [
+                    {
+                        "py/type": "df_analyze.enumerables.DfAnalyzeRegressor"
+                    },
+                    {
+                        "py/tuple": [
+                            "sgd"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "htune_trials": 50,
+    "htune_cls_metric": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.ClassifierScorer"
+            },
+            {
+                "py/tuple": [
+                    "acc"
+                ]
+            }
+        ]
+    },
+    "htune_reg_metric": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.enumerables.RegressorScorer"
+            },
+            {
+                "py/tuple": [
+                    "mae"
+                ]
+            }
+        ]
+    },
+    "test_val_size": 0.4,
+    "outdir": {
+        "py/reduce": [
+            {
+                "py/type": "pathlib.PosixPath"
+            },
+            {
+                "py/tuple": [
+                    "/",
+                    "home",
+                    "prade",
+                    "df_phase4_results",
+                    "secondary2020",
+                    "RUN2_DEMOGRAPHIC",
+                    "LLCP2020_DIABETE4_80k_DEMOGRAPHIC"
+                ]
+            }
+        ]
+    },
+    "is_spreadsheet": false,
+    "separator": ",",
+    "verbosity": {
+        "py/reduce": [
+            {
+                "py/type": "df_analyze.cli.cli.Verbosity"
+            },
+            {
+                "py/tuple": [
+                    1
+                ]
+            }
+        ]
+    },
+    "no_warn_explosion": false,
+    "no_preds": false,
+    "adaptive_error": false,
+    "aer_oof_folds": 5,
+    "aer_bins": 20,
+    "aer_target_error": 0.05,
+    "aer_alpha": 0.05,
+    "aer_min_bin_count": 10,
+    "aer_prior_strength": 2.0,
+    "aer_smooth": true,
+    "aer_monotonic": false,
+    "aer_adaptive_binning": false,
+    "aer_confidence_metric": "auto",
+    "aer_nmin": 1,
+    "aer_top_k": 0,
+    "aer_ensemble": false,
+    "aer_ensemble_strategies": null,
+    "aer_ens_top_n": 3,
+    "aer_ens_beta": 5.0,
+    "aer_ens_tau0": 0.3,
+    "aer_ens_lambda": 0.5,
+    "aer_ens_alpha": 0.7,
+    "aer_ens_trim_q": 0.6,
+    "aer_ens_tau_low": 0.15,
+    "aer_ens_tau_high": 0.35,
+    "program_dirs": {
+        "py/object": "df_analyze.saving.ProgramDirs",
+        "root": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec"
+                    ]
+                }
+            ]
+        },
+        "terminal": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "terminal_outputs.txt"
+                    ]
+                }
+            ]
+        },
+        "options": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "options.json"
+                    ]
+                }
+            ]
+        },
+        "joblib_cache": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "__JOBLIB_CACHE__"
+                    ]
+                }
+            ]
+        },
+        "renames": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "feature_renamings.md"
+                    ]
+                }
+            ]
+        },
+        "inspection": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "inspection"
+                    ]
+                }
+            ]
+        },
+        "prepared": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "prepared"
+                    ]
+                }
+            ]
+        },
+        "features": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "features"
+                    ]
+                }
+            ]
+        },
+        "descriptions": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "features",
+                        "descriptions"
+                    ]
+                }
+            ]
+        },
+        "associations": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "features",
+                        "associations"
+                    ]
+                }
+            ]
+        },
+        "predictions": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "features",
+                        "predictions"
+                    ]
+                }
+            ]
+        },
+        "selection": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "selection"
+                    ]
+                }
+            ]
+        },
+        "filter": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "selection",
+                        "filter"
+                    ]
+                }
+            ]
+        },
+        "embed": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "selection",
+                        "embed"
+                    ]
+                }
+            ]
+        },
+        "wrapper": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "selection",
+                        "wrapper"
+                    ]
+                }
+            ]
+        },
+        "tuning": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "tuning"
+                    ]
+                }
+            ]
+        },
+        "results": {
+            "py/reduce": [
+                {
+                    "py/type": "pathlib.PosixPath"
+                },
+                {
+                    "py/tuple": [
+                        "/",
+                        "home",
+                        "prade",
+                        "df_phase4_results",
+                        "secondary2020",
+                        "RUN2_DEMOGRAPHIC",
+                        "LLCP2020_DIABETE4_80k_DEMOGRAPHIC",
+                        "7e73199fc660123dfcbac2ba8e35eaec",
+                        "results"
+                    ]
+                }
+            ]
+        },
+        "needs_clean": false
+    },
+    "comparables": {
+        "model": {
+            "py/tuple": [
+                {
+                    "py/id": 21
+                },
+                {
+                    "py/id": 22
+                },
+                {
+                    "py/id": 23
+                },
+                {
+                    "py/id": 24
+                },
+                {
+                    "py/id": 25
+                }
+            ]
+        },
+        "selection": {
+            "py/tuple": [
+                {
+                    "py/id": 10
+                },
+                {
+                    "py/id": 11
+                },
+                {
+                    "py/id": 12
+                }
+            ]
+        },
+        "norm": {
+            "py/id": 9
+        }
+    }
+}
